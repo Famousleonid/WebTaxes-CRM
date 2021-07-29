@@ -1,0 +1,196 @@
+/* ------------------------------------------------ Choise_page --------------------- */
+ .choise {
+		/* border: 1px solid green; */
+		padding: 0px;
+ }
+ /* ------------------------------------------------Bookkepeng--------------------- */
+ .book {
+	 width: 100%;
+	 height: 200px;
+
+	 /* border: 1px solid red; */
+ }
+ .book-title {
+	 margin: 3px 0px 15px 25px;
+	 font-size: 1.3rem;
+ }
+ /* -----------------------------------------------Accounting--------------------- */
+ .account {
+	width: 100%;
+	height: 180px;
+	/* border: 1px solid red; */
+ }
+ .account-title {
+	margin: 3px 0px 5px 35px;
+	font-size: 1.3rem;
+}
+  /* ------------------------------------------------Taxation--------------------- */
+ .taxation {
+	position: relative;
+	width: 100%;
+	height: 120px;
+	/* border: 1px solid red; */
+ }
+ .taxation-title {
+	margin: 3px 0px 5px 35px;
+	font-size: 1.3rem;
+}
+   /* --------------------------------- Label Input ------------------ */
+ label {position: relative;}
+ #ph {
+	padding: 2px 5px 2px 7px ;
+	margin: 3px 0px 7px 0px;
+}
+ .ph {
+	position: absolute;
+	transition: .4s;
+	left: 7px;
+	top: 7px;
+	font-size: 0.9rem;
+ }
+ #ph:focus~.ph,
+ #ph:valid~.ph {
+	top: -11px;
+	left: 35px;
+	margin: 0px 10px 0px 0px;
+	font-size: 0.7rem;
+	background-color: white;
+	color: gray;
+ }
+ /* --------------------------- CheckBOX CSS ------------------------------------- */
+.container1 {
+	display: block;
+	position: relative;
+	padding-left: 22px;
+	margin: 10px 0px 10px 10px;
+	cursor: pointer;
+	font-size: 0.9rem;
+	user-select: none;
+	border-bottom:#E8E8E8 1px solid;
+}
+.container1 input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+.checkmark {
+	position: absolute;
+	top: 3px;
+	left: 0px;
+	height: 17px;
+	width: 17px;
+	background-color:#E8E8E8;
+}
+.container1:hover input ~ .checkmark {
+	background-color: #ccc;
+}
+.container1 input:checked ~ .checkmark {
+	background-color: #2196F3;
+}
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+.container1 input:checked ~ .checkmark:after {
+	display: block;
+}
+.container1 .checkmark:after {
+	left: 7px;
+	top: 3px;
+	width: 5px;
+	height: 8px;
+	border: solid white;
+	border-width: 0 2px 2px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+/* ------------------------------------------------------------------------------ */
+.sel-freq {
+	  margin: 0px 20px 0px 30px;
+}
+ /* ---------------------------------  Modal win for Choise Constructor--------------------------------------------------- */
+ .modal-accounts-pay,
+ .modal-accounts-rec,
+ .modal-payroll,
+ .modal-gst,
+ .modal-fin,
+ .modal-corp {
+	display: none;
+	position: absolute;
+	text-align: center;
+	border-radius: 7px;
+	top: 310px;
+	left: 200px;
+	width: 210px;
+	background-color:#E8E8E8;
+	overflow: hidden;
+	z-index: 3;
+	box-shadow: gray 7px 7px 25px 3px;
+}
+.modal-accounts-rec {
+	top: 330px;
+	left: 210px;
+}
+.modal-payroll {
+	top: 400px;
+	left: 220px;
+	width: 210px;
+	padding: 10px 0px 5px 0px;
+}
+.modal-gst {
+	top: 580px;
+	left: 200px;
+}
+.modal-fin {
+	top: 610px;
+	left: 210px;
+}
+.modal-corp {
+	top: 700px;
+	left: 220px;
+}
+.modal-personal-tax {
+	display: none;
+	position: absolute;
+    left: 50%;
+    top: 50%;
+	transform: translate(-50%, -50%);
+	width: 80%;
+	z-index:4;
+	padding: 0px 10px 10px 10px;
+	text-align: center;
+	border-radius: 7px;
+	background-color:#E8E8E8;
+	/* box-shadow: gray 7px 7px 25px 3px; */
+}
+.select-css {
+	width: 225px;
+	text-align: center;
+	font-size: 1rem;
+	padding: 0px 0px 3px 0px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	border-top: 2px solid  #27A9DF;
+}
+option:hover {
+	background: #27A9DF;
+	color: white;
+}
+/* ----------------------------------------------------------------------------- */
+/* ----------------------------------- 992px ------------ */
+@media screen and (max-width: 992px) {
+	.modal-personal-tax {
+		position: relative;
+		width: 80%;
+		margin-top: -1750px;
+		z-index:4;
+
+	}
+}
+
+

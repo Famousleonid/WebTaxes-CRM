@@ -1,0 +1,56 @@
+/* --------------------- Menu CSS--------------------- */
+
+#i-menu {
+    background: rgba(100, 100, 100, 0);
+    transition: all 1s ease;
+    position: fixed;
+    width: 100%;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color:white;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color:#a6e7ff;
+}
+.out-bg {
+    background: rgba(100, 100, 100, 0.8) !important;
+}
+.out {
+    transform: translateY(-100%);
+}
+.navbar-toggler {
+    border-color: transparent !important;
+}
+.dropdown-toggle {
+    padding-top: 6%;
+    color: white;
+}
+.dropdown-toggle:hover {
+    color:#a6e7ff;
+}
+
+.dropdown-menu {
+    left: auto;
+    background: transparent;
+    border: none;
+    color: white !important;
+    transform: translate3d(-47px, -34px, 0px);
+}
+.dropdown-item {
+    color: white !important;
+}
+.dropdown-item:hover{
+    background: rgba(100, 100, 100, 0.8);
+    /*background: transparent;*/
+    color:#a6e7ff !important;
+}
+
+@media screen and (max-width: 992px) {
+    .navbar-toggler {
+        padding: 2rem 2rem;
+    }
+    .navbar-nav .nav-link{
+        padding-right: 40px !important;
+    }
+}

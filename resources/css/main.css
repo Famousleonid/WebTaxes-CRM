@@ -1,0 +1,80 @@
+/* ----------------------------- Main page front ---------------------------- */
+
+.wrap-main--pic {
+    background-color: #ECECEC;
+    background-image: url("/public/img/taxmain.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100%;
+    padding-bottom:  15%;
+    height: 66vh;
+}
+.main-banner {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 25vh;
+}
+.main-banner-m {
+    font-size: 4.0rem;
+    font-weight: bold;
+    color: white;
+}
+.main-banner-t {
+    font-size: 1rem;
+    color: #a6e7ff;
+}
+#typing {
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+}
+#contact-pic-text {
+    color: black;
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+
+@media screen and (max-width: 992px) { /* ---- 992px small screen ---- */
+    .wrap-main--pic {
+        height: 50vh;
+    }
+    .main-banner-m {
+        font-size: 2rem;
+    }
+    #contact-pic-text {
+        font-size: 1.4rem;
+    }
+    #typing {
+        font-size: 2rem;
+    }
+    .main-banner-t	{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) { /* ----  NoteBook (768) -------- */
+
+    #typing {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 660px) { /* ----  660px SmartFon --------- */
+
+    .wrap-main--pic {
+        height: 37vh;
+    }
+
+    .main-banner {
+        padding-top: 18vh;
+    }
+
+    #typing {
+        font-size: 1.3rem;
+    }
+    .bene,
+    .main-banner-m {
+        font-size: 1.4rem;
+    }
+
+}
