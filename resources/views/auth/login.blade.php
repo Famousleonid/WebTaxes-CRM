@@ -1,8 +1,21 @@
 @extends('front.master')
 
-{{--@include('front.pages.menu')--}}
+@include('components.menu')
 
 @section('content')
+    <style>
+        #i-menu {
+            background: rgba(100, 100, 100, 0.8);
+            position: relative;
+        }
+        .item-contact {
+            display: none;
+        }
+        .item-faq {
+            margin-right: 50px;
+        }
+
+    </style>
     <div class="container-fluid " style="background-color: #ECECEC">
         <div class="container-xl">
             <div style="height: 700px; padding-top: 80px">

@@ -7,16 +7,17 @@
     <title>Admin Taxes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="{{asset('/css/normalize.css')}}">
-    <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/admin/css/adminlte.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/adminlte.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/plugins/fontawesome-free/css/all.css')}}">
     <link rel="stylesheet" href="{{asset('assets/plugins/select2/css/select2.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/plugins/datatables.min.css')}}">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="{{asset('assets/plugins/filepond-master/dist/filepond.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/plugins/filepond-plugin-image-preview-master/dist/filepond-plugin-image-preview.min.css')}}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+{{--    <link rel="stylesheet" href="{{'css/dataTables.bootstrap4.min.css'}}">--}}
+
     @livewireStyles
 
     @yield('links')
@@ -335,11 +336,11 @@
 
 <script src="{{asset('js/jquery.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
-<script src="{{asset('assets/admin/js/adminlte.min.js')}}"></script>
+<script src="{{asset('js/adminlte.min.js')}}"></script>
 <script src="{{asset('assets/plugins/select2/js/select2.full.min.js')}}"></script>
-<script src="{{asset('assets/admin/js/demo.js')}}"></script>
+{{--<script src="{{asset('assets/admin/js/demo.js')}}"></script>--}}
 <script src="{{asset('assets/plugins/datatables.min.js')}}"></script>
-<script src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js"></script>
+{{--<script src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js"></script>--}}
 <script src="{{asset('assets/plugins/filepond-master/dist/filepond.min.js')}}"></script>
 <script src="{{asset('assets/plugins/filepond-plugin-image-preview-master/dist/filepond-plugin-image-preview.min.js')}}"></script>
 <script src="{{asset('assets/plugins/filepond-plugin-file-validate-size.min.js')}}"></script>

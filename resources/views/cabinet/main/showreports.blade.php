@@ -83,7 +83,7 @@
 @endsection
 @section('scripts')
 
-    <script src="{{asset('assets/admin/js/jquery.fancybox.min.js')}}"></script>
+    <script src="{{asset('js/jquery.fancybox.min.js')}}"></script>
 
 
     <script type="text/javascript">
@@ -99,47 +99,6 @@
                 "ordering": true,
                 "info": true,
             });
-
-            {{--// ------------------------------FilePond Lib --------------------------------------------------}}
-
-            {{--FilePond.registerPlugin(--}}
-            {{--    FilePondPluginImagePreview,--}}
-            {{--    FilePondPluginFileValidateSize,--}}
-            {{--);--}}
-
-            {{--let inputElement = document.getElementById('filepond-scan')--}}
-
-            {{--FilePond.create(inputElement)--}}
-
-            {{--FilePond.setOptions({--}}
-            {{--    server: {--}}
-            {{--        process: {--}}
-            {{--            url: '{{ route('filepondStoreScan') }}',--}}
-            {{--        },--}}
-            {{--        revert: {--}}
-            {{--            url: '{{ route('filepondDeleteScan') }}',--}}
-            {{--            'method': 'post'--}}
-            {{--        },--}}
-            {{--        headers: {--}}
-            {{--            'X-CSRF-TOKEN': '{{ csrf_token()}}'--}}
-            {{--        }--}}
-            {{--    },--}}
-            {{--    imagePreviewMaxHeight: 100,--}}
-            {{--    instantUpload: true,--}}
-            {{--    allowMultiple: true,--}}
-            {{--    allowImagePreview: 'true',--}}
-            {{--    processFiles: false,--}}
-            {{--    mimeType: "multipart/form-data",--}}
-            {{--    maxFiles: '10',--}}
-            {{--    // labelIdle: "My label",--}}
-
-            {{--    onprocessfiles: () => {--}}
-            {{--        // console.log('все файлы загружены');--}}
-            {{--        $('.message_start').addClass('d-none');--}}
-            {{--        $('.message_maindocument').removeClass('d-none');--}}
-            {{--        $('.upload-maindocument').removeClass('disabled');--}}
-            {{--    },--}}
-            {{--});--}}
 
 
             let data_tbl = document.querySelectorAll('.thumb_pic')

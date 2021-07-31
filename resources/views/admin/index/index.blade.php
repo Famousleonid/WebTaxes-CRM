@@ -205,7 +205,7 @@
 
 
     <script src="{{asset('assets/plugins/fullcalendar/main.js')}}"></script>
-    <script src="{{asset('assets/admin/js/jquery.datetimepicker.full.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/jquery.datetimepicker.full.min.js')}}"></script>
 
 
 

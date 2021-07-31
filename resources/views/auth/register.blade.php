@@ -1,14 +1,20 @@
 @extends('front.master')
 
-@section('link')
-{{--    <link rel="stylesheet" href="{{asset('/assets/front/css/main-str.css')}}">--}}
-{{--    <link rel="stylesheet" href="{{asset('assets/front/css/main.css')}}">--}}
-{{--    <link rel="stylesheet" href="{{asset('/assets/front/css/login.css')}}">--}}
-@endsection
-
-@include('front.pages.menu')
+@include('components.menu')
 
 @section('content')
+    <style>
+        #i-menu {
+            background: rgba(100, 100, 100, 0.8);
+            position: relative;
+        }
+        .item-contact {
+            display: none;
+        }
+        .item-faq {
+            margin-right: 50px;
+        }
+    </style>
 
     <div class="container-fluid " style="background-color: #ECECEC">
         <div class="container-xl">

@@ -19,7 +19,7 @@ class CreatePaymentsTable extends Migration
             $table->foreign('firm_id')->references('id')->on('firms');
             $table->string('stripe_id')->nullable();
             $table->string('payer_email')->nullable();
-            $table->float('amount');
+            $table->double('amount',12,2)->nullable();
             $table->string('currency',3);
             $table->string('description')->nullable();
             $table->timestamps();
