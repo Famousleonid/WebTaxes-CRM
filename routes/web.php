@@ -14,6 +14,13 @@ Route::view('/faq', 'front.pages.faq')->name('faq')->middleware('visit:faq');
 Route::get('/main-price', 'Front\FrontController@main_price')->name('main_price')->middleware('visit:price');
 Route::get('/price', 'Front\FrontController@price')->name('price');
 Route::post('/request', 'Front\FrontController@request')->name('front.request');
+Route::get('/clear', function() {
+    Artisan::call('cache:clear');
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+    Artisan::call('route:clear');
+    return "Кэш очищен.";
+});
 
 
 //--------------------- Cabinet route AUTH ------------------------------------------------------------------

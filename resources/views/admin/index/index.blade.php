@@ -24,7 +24,7 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            z-index: 10;
+            z-index: 110;
             background: rgba(0, 0, 0, 0.7);
             display: none;
 
@@ -315,15 +315,13 @@
                 if (title == "") {
                     title = "Event..."
                 }
-                ;
                 if (color == "#000000") {
                     color = "#0FC0FC"
                 }
-                ;
+
                 if (textColor == "#000000") {
                     textColor = "#FFF"
                 }
-                ;
 
                 if (start <= end) {
                     $.ajax({

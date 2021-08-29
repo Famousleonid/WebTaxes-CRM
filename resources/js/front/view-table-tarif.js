@@ -1,10 +1,10 @@
-function viewPrice(itemJSON, view) {
+viewPrice = function(itemJSON, view) {
 
     // let o = JSON.parse(itemJSON);
     let w = document.querySelector(view);
     let o = itemJSON;
 
-    w.innerHTML = `<table class="table table-striped table-bordered view-obj"></table>`;
+    w.innerHTML = `<table class="table table-striped table-bordered view-obj nowrap"></table>`;
     let t = document.querySelector('.view-obj');
     let row = document.createElement('tr')
     row.innerHTML = `<td colspan = "2"><b>Tariff:&nbsp;&nbsp;&nbsp;"<span style="font-size: 20px; text-transform: uppercase;">${o.iPrice}<span>"</b></td>` + '<td>$/mon</td>'
@@ -27,11 +27,6 @@ function viewPrice(itemJSON, view) {
 								 <td>${o.paySer['period'] + ' for ' + o.paySer['How many'] + ' person'}</td>
 						  		 <td>${o.paySum}</td>`
         t.appendChild(row)
-        // 	row = document.createElement('tr')
-        // 	row.innerHTML = `<td class="t_r"></td>
-        // 						     <td>${id[1]} </td>
-        // 					  		 <td>${o.paySer[id[1]]}</td>`
-        // 	t.appendChild(row)
     }
     //----------------------------------------------------
     viewNonObj(o.invAcc, 'Inventory Accounting');

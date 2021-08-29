@@ -87,8 +87,14 @@ class UserController extends Controller
 
     public function destroy($id)
     {
+       try {
+           $answer = User::destroy($id);
+       }catch (\Exception $e) {
+            return back()->withErrors('Companies are associated with this user. Delete them first');
+       }
 
-        User::destroy($id);
+
+
 
         return redirect()->route('user.index')->with('success', 'User deleted');
     }

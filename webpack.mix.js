@@ -8,9 +8,8 @@ mix.js('resources/js/function.js', 'js')
    .js('resources/js/front/front-index.js','js')
    .js('resources/js/front/config-price.js','js')
    .js('resources/js/front/price.js','js')
-   // .js('resources/js/front/view-table-tarif.js','public/assets/js/app-front.js')
-   // .js('resources/js/admin/admin-master.js','public/assets/js/app-admin.js');
-    .setPublicPath('public/assets/');
+   .js('resources/js/front/view-table-tarif.js','js')
+   .setPublicPath('public/assets/');
 
 // mix.copyDirectory('resources/admin/img', 'public/assets/admin/img' );
 

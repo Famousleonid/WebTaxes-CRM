@@ -111,8 +111,17 @@
                                         <td class="text-center"><img src="{{asset('img/icon_no.png')}}" width="15px" alt=""></td>
                                     @endif
 
-                                    <td>{{$firm->user->name}}</td>
-                                    <td>{{$firm->tariff->name}}</td>
+                                    @if( $firm->user == null)
+                                        <td class="text-danger text-bold">No user</td>
+                                    @else
+                                        <td>{{$firm->user->name}}</td>
+                                    @endif
+
+                                    @if( $firm->tariff == null)
+                                        <td class="text-danger text-bold">No tariff</td>
+                                    @else
+                                        <td>{{$firm->tariff->name}}</td>
+                                    @endif
 
                                     @if($firm->sum < 0)
                                         <td class="text-center text-bold text-danger">{{number_format($firm->sum/100, 2)}}</td>
@@ -165,6 +174,8 @@
 @endsection
 
 @section('scripts')
+
+
     <script>
 
         $('#admin_new_firm_create').click(function () {
@@ -172,7 +183,6 @@
             window.localStorage.clear()
             sessionStorage.setItem('select_tariff', 'edit')
         });
-
 
 
         let mainTable = $('#show-firm').DataTable({

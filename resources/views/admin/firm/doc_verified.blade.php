@@ -375,7 +375,7 @@
 
 @section('scripts')
 
-    <script src="{{asset('assets/admin/js/jquery.fancybox.min.js')}}"></script>
+    <script src="{{asset('js/jquery.fancybox.min.js')}}"></script>
 
 
     <script type="text/javascript">

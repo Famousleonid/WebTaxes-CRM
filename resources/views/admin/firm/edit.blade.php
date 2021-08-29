@@ -38,31 +38,12 @@
             left: 30px;
         }
 
-        .div_tariff {
-            position: absolute;
-            display: none;
-            top: 100px;
-            left: 20%;
-            width: 60%;
-            border: 1px solid #17A2B8;
-            /*background-color: #F3F3F3;*/
-            background-color: white;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .fon_modal_tariff {
-            position: absolute;
-            display: none;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background-color: lightgray;
-            opacity: 0.3;
-        }
 
         .view_tariff:hover {
             cursor: pointer;
+        }
+        .modal-dialog{
+            min-width: 50%;
         }
 
 
@@ -70,6 +51,22 @@
 @endsection
 
 @section('content')
+
+    {{------------------------------------ View tariff -- modal --------------------}}
+    <div class="modal fade" id="modalTariff" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modalTariff-body p-5" ></div>
+            </div>
+        </div>
+    </div>
+
+    {{--------------------------------------------------------------------------------}}
 
 
     <section class="container firm-border shadow bg-white mt-3">
@@ -144,7 +141,8 @@
 
                         <div class="col-2"><a href="{{route('price')}}" id="change_current_tariff" class="nav-link view_tariff">change tariff</a></div>
                         <div id="NameTariffDiv" class="col-4 col-form-label"></div>
-                        <div class="col-2"><span id="view_current_tariff" class="nav-link view_tariff" style="color:#007BFF;">view tariff</span></div>
+
+                        <div class="col-2"><span id="view_current_tariff" class="nav-link view_tariff" data-toggle="modal" data-target="#modalTariff" style="color:#007BFF;">view tariff</span></div>
 
                     </div>
 
@@ -165,10 +163,7 @@
 
         </div>
 
-        {{------------------------------------ View tariff -- modal --------------------}}
-        <div class="fon_modal_tariff"></div>
-        <div class="div_tariff"></div>
-        {{--------------------------------------------------------------------------------}}
+
 
 
     </section>
@@ -177,7 +172,12 @@
 
 @section('scripts')
 
-    <script type="text/javascript" src="{{asset('assets/front/js/view-table-tarif.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/view-table-tarif.js')}}"></script>
+
+
+
+
+
 
     <script>
 
@@ -241,9 +241,7 @@
             document.getElementById("tariff_json").value = Json_field;
         }
 
-
-        viewPrice(MainTariff, '.div_tariff');
-
+        viewPrice(MainTariff, '.modalTariff-body');
 
     </script>
 @endsection

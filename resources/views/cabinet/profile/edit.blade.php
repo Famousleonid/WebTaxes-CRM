@@ -3,67 +3,47 @@
 @section('link')
 
     <style>
-        .div_tariff {
-            position: absolute;
-            display: none;
-            top: 10vh;
-            left: 20%;
-            width: 60%;
-            border: 1px solid #17A2B8;
-            z-index: 1060;
-            /*background-color: #F3F3F3;*/
-            background-color: white;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .fon_modal_tariff {
-            position: fixed;
-            display: none;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: gray;
-            opacity: 0.5;
-            /*outline: 0;*/
-            /*transition-property: opacity;*/
-            /*transition-duration: 0.1s;*/
-            /*transition-timing-function: linear;*/
-            /*transition-delay: 0s;*/
-            z-index: 1050;
-        }
-
         .view_tariff:hover {
             cursor: pointer;
         }
-
-        /*.div_error {*/
-        /*    border: 1px solid red;*/
-        /*}*/
-
+        .modal-dialog{
+            min-width: 50%;
+        }
     </style>
 
 @endsection
 
 @section('content')
 
+    {{------------------------------------ View tariff -- modal --------------------}}
+    <div class="modal fade" id="modalTariff" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modalTariff-body p-5" ></div>
+            </div>
+        </div>
+    </div>
+    {{--------------------------------------------------------------------------------}}
+
+
     <div class="container">
         <div class="card shadow firm-border mt-2">
             <div>
-
                 <ul class="nav nav-tabs" style="background-color: #F4F6F9; border-right: none;">
                     <li class="nav-item"><a class="nav-link active" href="#create_firms" data-toggle="tab">Company editing</a></li>
                     <li class="nav-item"><a class="nav-link" href="#create_scan_firm" data-toggle="tab">Helper</a></li>
                 </ul>
-
                 <div class="card-body pt-0">
                     <div class="tab-content">
                         <div class="active tab-pane" id="create_firms">
-
                             <form id="change_edit_form" role="form" method="post" action="{{route('firms.update',['firm' => $firm->id])}}">
                                 @csrf
                                 @method('PUT')
-
                                 <div class="col-md-12">
                                     <div class="card-header">
                                         <h3 class="card-title text-info font-weight-bold">Edit company</h3>
@@ -71,7 +51,6 @@
                                             <span style="color:green;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After verification by the administrator, some fields cannot be changed</span>
                                         @endif
                                     </div>
-
                                     <div class="card-body row" id="create_div_inputs">            {{--    style="background-color: #F4F6F9;"--}}
                                         <div class="form-group col-md-7 mb-1">
                                             <label for="company_name">Company Name (required)</label>
@@ -127,11 +106,7 @@
                                                 <div class="col-md-4 ">
                                                     <h3 class="card-title text-info">The contact person</h3>
                                                 </div>
-                                                {{--                                            <div class="col-md-6">--}}
-                                                {{--                                                <input type="checkbox" id="director_contact_same" name="copyFields"><span style='font-size: 12px;'>&nbsp;&nbsp;&nbsp; check the box if the director and contact person are the same</span>--}}
-                                                {{--                                            </div>--}}
                                             </div>
-
                                             <div class="row">
                                                 <div class="form-group col-md-6">
                                                     <small class="form-text text-muted">First name</small>
@@ -165,7 +140,8 @@
                                             @endif
 
                                             <div id="NameTariffDiv" class="col-md-5 col-form-label"></div>
-                                            <div class="col-md-2"><span id="view_current_tariff" class="nav-link view_tariff" style="color:#007BFF;">view tariff</span></div>
+                                            <div class="col-2"><span id="view_current_tariff" class="nav-link view_tariff" data-toggle="modal" data-target="#modalTariff" style="color:#007BFF;">view tariff</span></div>
+
                                         </div>
 
                                         <input type="text" hidden name="tariff_id" id="tariff_id" value="{{$firm->tariff_id}}">
@@ -197,18 +173,15 @@
                         </div>
                     </div>
                 </div>
-                {{------------------------------------ View tariff -- modal --------------------}}
-                <div class="fon_modal_tariff"></div>
-                <div class="div_tariff"></div>
-                {{--------------------------------------------------------------------------------}}
+
             </div>
         </div>
 
-@endsection
+        @endsection
 
-@section('scripts')
+        @section('scripts')
 
-            <script type="text/javascript" src="{{asset('assets/front/js/view-table-tarif.js')}}"></script>
+            <script type="text/javascript" src="{{asset('assets/js/view-table-tarif.js')}}"></script>
             {{--    <script src="{{asset('js/jquery.maskedinput.min.js')}}"></script>--}}
 
             <script>
@@ -269,7 +242,7 @@
                     }
 
                     // viewPrice(Json_field, '.div_tariff');
-                    viewPrice(MainTariff, '.div_tariff');
+                    viewPrice(MainTariff, '.modalTariff-body');
 
                 });
 

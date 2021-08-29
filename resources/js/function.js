@@ -12,13 +12,24 @@ window.encrypt = function (str) {
 }
 window.decrypt = function (str) {
 
+    // if(str === null) str = "U2FsdGVkX1+HiAO3zYyy7PZloLethKzcdU+9J+2ztPo=";
+
     if (isString(str)) {
         let decrypted = CryptoJS.AES.decrypt(str, "mdxspl");
         return decrypted.toString(CryptoJS.enc.Utf8);
     }
-    return 'на ДЕшифрование передана НЕ строка';
+    return 'nonStr';
 }
 
-function isString(val) {
+window.isString = function (val) {
     return (typeof val === "string" || val instanceof String);
+}
+
+window.IsJsonString = function (str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
 }

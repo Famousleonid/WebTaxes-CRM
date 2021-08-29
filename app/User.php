@@ -36,9 +36,5 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
         return $this->hasMany("App\Message");
     }
 
-//    public function getOnlineAttribute() {
-//        $activity = DB::table('sessions')->where('user_id',$this->id)->where('last_activity','>',strtotime("-15 minutes"))->count();
-//        return $activity ? 'Online' : 'Offline' ;
-//    }
 
 }
